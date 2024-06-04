@@ -1,0 +1,20 @@
+---
+### Apply Initial Configuration
+
+- name: Configure Azure Settings
+  hosts: localhost
+  gather_facts: False
+  ignore_errors: True
+
+  vars:
+    resource_group: "" 
+    location: "" 
+
+  tasks:
+    - name: Create a resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
+        tags:
+          deployment_type: test
+          application: testapp
