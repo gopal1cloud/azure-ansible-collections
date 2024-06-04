@@ -11,15 +11,9 @@
     location: "" 
 
   tasks:
-    - name: Check ls
-      ansible.builtin.shell: |
-        ls &&
-        pwd &&
-        locate requirements-azure.txt 
     - name: Install specified python requirements
       ansible.builtin.pip:
         requirements: /runner/project/requirements.txt
-
     - name: Create a resource group
       azure.azcollection.azure_rm_resourcegroup:
         name: "{{ resource_group }}"

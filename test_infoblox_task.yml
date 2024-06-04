@@ -1,0 +1,20 @@
+---
+### Apply Initial Configuration
+
+- name: Configure Infoblox Settings
+  hosts: localhost
+  gather_facts: False
+  ignore_errors: True
+
+  vars:
+    host_record: "" 
+    location: "" 
+
+  tasks:
+    #- name: Install specified python requirements
+    #  ansible.builtin.pip:
+    #    requirements: /runner/project/requirements.txt
+    - name: get a host record
+      ansible.builtin.set_fact:
+        host: "{{ lookup('infoblox.nios_modules.nios_lookup', 'record:host', filter={'name': 'hostname.ansible.com'}) }}"
+
