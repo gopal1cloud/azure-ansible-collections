@@ -14,10 +14,11 @@
     - name: Check ls
       ansible.builtin.shell: |
         ls &&
-        pwd 
+        pwd &&
+        locate requirements-azure.txt 
     - name: Install specified python requirements
       ansible.builtin.pip:
-        requirements: ~/.ansible/roles/azure.azure_preview_modules/files/requirements-azure.txt
+        requirements: requirements.txt
 
     - name: Create a resource group
       azure.azcollection.azure_rm_resourcegroup:
