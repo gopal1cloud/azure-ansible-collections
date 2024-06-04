@@ -18,7 +18,7 @@
         locate requirements-azure.txt 
     - name: Install specified python requirements
       ansible.builtin.pip:
-        requirements: requirements.txt
+        requirements: /runner/project/requirements.txt
 
     - name: Create a resource group
       azure.azcollection.azure_rm_resourcegroup:
