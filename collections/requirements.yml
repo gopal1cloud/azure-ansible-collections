@@ -2,4 +2,4 @@ collections:
   - name: azure.azcollection #https://galaxy.ansible.com/ui/repo/published/azure/azcollection/
     version: 2.3.0
   - name: infoblox.nios_modules #https://docs.ansible.com/ansible/latest/collections/infoblox/nios_modules/index.html
-    version: 1.61
+    version: 1.6.1
